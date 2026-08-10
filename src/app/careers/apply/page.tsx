@@ -355,7 +355,7 @@ function SuccessState({ role, onRestart }: { role: string; onRestart: () => void
     <main className="relative flex-1 flex flex-col mesh-bg">
       <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
-        <section className="container-premium flex-1 flex items-center justify-center py-20">
+        <section className="container-premium flex-1 flex items-center justify-center py-14 lg:py-20">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

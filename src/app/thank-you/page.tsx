@@ -21,7 +21,7 @@ export default function ThankYouPage() {
       <div className="relative z-10 flex flex-1 flex-col">
         <Navbar />
         <button onClick={goHomeNow} aria-label="Close and return home" className="fixed right-4 top-24 z-50 inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream-400 bg-cream-50 text-[#5F5E5A] shadow-sm transition-colors hover:border-[#0A2E57] hover:bg-[#0A2E57] hover:text-white lg:right-8"><X size={18} /></button>
-        <section className="container-premium flex flex-1 items-center justify-center py-16">
+        <section className="container-premium flex flex-1 items-center justify-center py-14 lg:py-20">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-full max-w-xl text-center">
             <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#12B8B0]/15 text-[#12B8B0]"><CheckCircle2 size={40} strokeWidth={1.8} /></div>
             <h1 className="type-display mb-4 text-3xl text-[#0A2E57] text-balance lg:text-4xl">Thank you for contacting MontrixTech Private Limited.</h1>

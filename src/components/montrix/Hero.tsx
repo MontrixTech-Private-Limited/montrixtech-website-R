@@ -49,8 +49,8 @@ export default function Hero() {
         </div>
       </div>
 
-<div className="container-premium relative pt-2 lg:pt-0">
-  <div className="grid grid-cols-1 items-center gap-2 py-2 lg:grid-cols-[48%_52%]">
+<div className="container-premium relative pt-10 pb-8 lg:pt-14 lg:pb-10">
+  <div className="grid grid-cols-1 items-center gap-10 lg:gap-6 lg:grid-cols-[48%_52%]">
            <motion.div
             variants={containerVariants}
             initial="hidden"

@@ -247,7 +247,7 @@ size={305}          />
         </section>
 
         <section className="container-premium py-10 lg:py-14">
-          <div className="relative overflow-hidden rounded-3xl bg-[#0A2E57] p-8 text-white lg:p-14">
+          <div className="relative overflow-hidden rounded-3xl bg-[#0A2E57] p-6 text-white lg:p-14">
             <div
               aria-hidden="true"
               className="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#12B8B0]/20 blur-3xl"

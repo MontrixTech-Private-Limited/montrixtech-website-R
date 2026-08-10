@@ -12,7 +12,7 @@ export default function ServicesBento() {
   const homeServices = SERVICES.slice(0, 3);
 
   return (
-<section className="pt-4 pb-8 lg:pt-6 lg:pb-10">
+<section className="py-10 lg:py-14">
           <div className="container-premium">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">

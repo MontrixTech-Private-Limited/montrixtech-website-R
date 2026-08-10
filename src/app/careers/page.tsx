@@ -132,7 +132,7 @@ export default function CareersPage() {
       <div className="relative z-10 flex flex-1 flex-col">
         <Navbar />
 
-        <section className="relative container-premium pb-10 pt-12 lg:pb-12 lg:pt-16">
+        <section className="relative container-premium pb-8 pt-12 lg:pb-10 lg:pt-16">
           <div className="pointer-events-none absolute right-8 top-8 z-10 hidden size={120}opacity-100 lg:block">
   <Image
     src="/images/illustrations/bug.png"

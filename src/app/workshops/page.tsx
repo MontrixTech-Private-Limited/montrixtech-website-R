@@ -139,7 +139,7 @@ export default function WorkshopsPage() {
         <Navbar />
 
         {/* ===== HERO ===== */}
-<section className="relative container-premium pt-12 pb-10 lg:pt-16 lg:pb-12">          
+<section className="relative container-premium pt-12 pb-8 lg:pt-16 lg:pb-10">          
 
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
@@ -224,7 +224,7 @@ className="object-contain"  />
         </section>
 
         {/* ===== WHY CHOOSE MONTRIXTECH ===== */}
-        <section className="container-premium py-12 lg:py-16">
+        <section className="container-premium py-10 lg:py-14">
           <SectionHeading
             eyebrow="Why MontrixTech"
             title="Built by engineers. Delivered for classrooms."
@@ -263,7 +263,7 @@ className="object-contain"  />
         {/* ===== WORKSHOP CATEGORIES ===== */}
         <section
   id="categories"
-  className="relative container-premium py-12 lg:py-16 scroll-mt-16"
+  className="relative container-premium py-10 lg:py-14 scroll-mt-16"
 >
 
   <div className="hidden lg:block absolute right-0 top-8 pointer-events-none z-20">
@@ -346,7 +346,7 @@ className="object-contain"  />
         </section>
 
         {/* ===== TECHNOLOGIES WE TEACH ===== */}
-        <section className="py-12 lg:py-16 bg-cream-200/60 border-y border-cream-400">
+        <section className="py-10 lg:py-14 bg-cream-200/60 border-y border-cream-400">
           <div className="container-premium">
             <SectionHeading
               eyebrow="Stack"
@@ -386,7 +386,7 @@ className="object-contain"  />
         </section>
 
         {/* ===== WORKSHOP FEATURES ===== */}
-<section className="relative container-premium py-12 lg:py-16">
+<section className="relative container-premium py-10 lg:py-14">
   
   <div className="hidden lg:block absolute left-0 top-8 pointer-events-none z-20">
   <Image
@@ -434,7 +434,7 @@ className="object-contain"  />
         </section>
 
         {/* ===== WORKSHOP PROCESS ===== */}
-        <section className="container-premium py-12 lg:py-16">
+        <section className="container-premium py-10 lg:py-14">
           <SectionHeading
             eyebrow="How it works"
             title="From first call to certified — a transparent process."
@@ -484,7 +484,7 @@ className="object-contain"  />
         </section>
 
        {/* ===== GALLERY ===== */}
-<section className="relative py-12 lg:py-16 bg-cream-200/60 border-y border-cream-400">
+<section className="relative py-10 lg:py-14 bg-cream-200/60 border-y border-cream-400">
 {/* Gallery illustration */}
 <div className="hidden lg:block absolute right-12 top-8 z-10 pointer-events-none">
   <Image
@@ -531,7 +531,7 @@ height={340}
   </div>
 </section>
         {/* ===== FAQ ===== */}
-        <section className="container-premium py-12 lg:py-16">
+        <section className="container-premium py-10 lg:py-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4">
               <SectionHeading
@@ -562,7 +562,7 @@ height={340}
         </section>
 
         {/* ===== FINAL CTA ===== */}
-        <section className="container-premium py-12 lg:py-16">
+        <section className="container-premium py-10 lg:py-14">
           <div className="relative overflow-hidden rounded-3xl bg-[#0A2E57] text-white p-6 lg:p-14">
             <div
               aria-hidden="true"

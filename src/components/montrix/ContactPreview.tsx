@@ -29,7 +29,8 @@ const contactDetails = [
 
 export default function ContactPreview() {
   return (
-<section className="py-4 lg:py-6">      <div className="container-premium">
+<section className="py-10 lg:py-14">
+      <div className="container-premium">
         <SectionHeading
           eyebrow="Get in touch"
           title={<>Let&apos;s build something together.</>}

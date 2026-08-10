@@ -230,7 +230,7 @@ function ContactPageInner() {
           </motion.p>
         </section>
 
-        <section className="container-premium py-8 lg:py-12">
+        <section className="container-premium py-10 lg:py-14">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-6">
             <motion.form
               initial={{ opacity: 0, y: 16 }}
@@ -497,7 +497,7 @@ function ContactPageSkeleton() {
           <div className="h-6 w-1/2 rounded bg-cream-200" />
         </section>
 
-        <section className="container-premium py-8 lg:py-12">
+        <section className="container-premium py-10 lg:py-14">
           <div className="h-96 animate-pulse rounded-2xl border border-cream-400 bg-cream-50 p-6 lg:p-6" />
         </section>
 

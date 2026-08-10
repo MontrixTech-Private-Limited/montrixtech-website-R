@@ -21,17 +21,18 @@ export default function ServiceSection({
 }: ServiceSectionProps) {
   return (
     <section
-      className={`py-0 ${
+      className={`py-10 lg:py-14 ${
         reverse ? "bg-[#FCFBF8]" : "bg-white"
       }`}
     >
-<div className="mx-auto w-full max-w-[1350px] px-16 lg:px-24">  <div
+<div className="container-premium">  <div
     className={`
       grid
       grid-cols-1
       lg:grid-cols-[45%_55%]
       items-center
-      min-h-[420px]
+      gap-8
+      lg:min-h-[420px]
     `}
   >
         {/* IMAGE */}

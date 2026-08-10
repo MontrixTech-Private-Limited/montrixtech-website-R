@@ -5,10 +5,7 @@ import CornerIllustration from "./CornerIllustration";
 
 export default function ServicesHero() {
   return (
-    <section className="relative container-premium pt-8
-pb-10
-lg:pt-10
-lg:pb-12">
+    <section className="relative container-premium pt-12 pb-8 lg:pt-16 lg:pb-10">
       <CornerIllustration
   src="/images/illustrations/code-snippets.png"
   alt=""
