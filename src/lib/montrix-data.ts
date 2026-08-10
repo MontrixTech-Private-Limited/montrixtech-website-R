@@ -78,7 +78,7 @@ export const SOCIALS = [
   },
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/montrixtech-private-limited",
     icon: "linkedin" as const,
   },
 ] as const;

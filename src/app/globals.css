@@ -521,3 +521,66 @@
     transition-duration: 0.01ms !important;
   }
 }
+/* =========================================================
+   Hero lightweight animations
+   CSS animations replace Framer Motion
+   ========================================================= */
+
+.hero-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-item:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.hero-item:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.hero-item:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.hero-illustration {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: heroIllustrationIn 0.9s cubic-bezier(0.22, 1, 0.36, 1)
+    0.18s forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroIllustrationIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-item,
+  .hero-illustration {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
