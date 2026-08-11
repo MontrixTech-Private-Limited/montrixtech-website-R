@@ -21,12 +21,11 @@ export default function Footer() {
   aria-label="MontrixTech Home"
 >
  <Image
-  src="/images/footer-logo.png"
+  src="/images/footer-logo-dark-footer1 (2).png"
   alt="MontrixTech"
-  width={330}
-  height={80}
+  width={330}   height={80}
   priority
-  className="h-16 w-auto object-contain"
+  className="h-28 w-auto object-contain"
 />
 </Link>        <p className="mt-5 text-sm leading-7 max-w-sm text-[#9FB3CC]">
               {COMPANY.tagline} We design and build web, mobile, cloud, and AI
