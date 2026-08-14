@@ -1,21 +1,17 @@
 version: 1
-
 frontend:
   phases:
     preBuild:
       commands:
-        - node -v
-        - npm -v
         - npm ci
     build:
       commands:
+        - env | grep -E '^(SES_AWS_REGION|SES_AWS_ACCESS_KEY_ID|SES_AWS_SECRET_ACCESS_KEY|CONTACT_FROM_EMAIL|CONTACT_TO_EMAIL|CAREERS_TO_EMAIL|WORKSHOP_TO_EMAIL|EMAIL_PROVIDER)=' >> .env.production
         - npm run build
-
   artifacts:
     baseDirectory: .next
     files:
       - "**/*"
-
   cache:
     paths:
       - node_modules/**/*
