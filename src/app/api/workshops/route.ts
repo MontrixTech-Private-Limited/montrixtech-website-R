@@ -17,47 +17,48 @@ export async function POST(request: Request) {
       name,
       email,
       phone,
-      company,
+      institution,
+      workshop,
+      participants,
       message,
-      topic,
     } = body;
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name || !email || !institution || !workshop) {
       return NextResponse.json(
         {
           ok: false,
-          error: "Name, email and message are required.",
+          error:
+            "Name, email, institution and workshop are required.",
         },
         { status: 400 }
       );
     }
 
-    const subject = topic
-      ? `[MontrixTech · ${topic}] New enquiry from ${name}`
-      : `[MontrixTech] New enquiry from ${name}`;
+    const subject = `[MontrixTech Workshops] New enquiry from ${name}`;
 
     const textBody = `
-New enquiry received from the MontrixTech website.
+New workshop enquiry received from the MontrixTech website.
 
 Name: ${name}
 Email: ${email}
 Phone: ${phone || "Not provided"}
-Company: ${company || "Not provided"}
-Topic: ${topic || "General enquiry"}
+Institution: ${institution}
+Workshop: ${workshop}
+Participants: ${participants || "Not provided"}
 
 Message:
-${message}
+${message || "No additional message provided."}
 
 --------------------------------
-This message was submitted through the MontrixTech website.
+This enquiry was submitted through the MontrixTech website.
 `;
 
     const command = new SendEmailCommand({
       FromEmailAddress: process.env.CONTACT_FROM_EMAIL!,
       Destination: {
         ToAddresses: [
-          process.env.CONTACT_TO_EMAIL || "contact@montrixtech.in",
+          process.env.WORKSHOP_TO_EMAIL || "workshop@montrixtech.in",
         ],
       },
       ReplyToAddresses: [email],
@@ -81,19 +82,19 @@ This message was submitted through the MontrixTech website.
 
     await ses.send(command);
 
-    console.log("Contact email sent successfully.");
+    console.log("Workshop enquiry email sent successfully.");
 
     return NextResponse.json({
       ok: true,
-      message: "Message sent successfully.",
+      message: "Workshop enquiry sent successfully.",
     });
   } catch (error) {
-    console.error("SES contact email error:", error);
+    console.error("SES workshop email error:", error);
 
     return NextResponse.json(
       {
         ok: false,
-        error: "Failed to send message. Please try again later.",
+        error: "Failed to send enquiry. Please try again later.",
       },
       { status: 500 }
     );

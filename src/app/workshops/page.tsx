@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -45,9 +45,7 @@ import {
   WORKSHOP_FAQS,
   type WorkshopFeature,
 } from "@/lib/montrix-data";
-
-
-
+import WorkshopEnquiryForm from "@/components/montrix/WorkshopEnquiryForm";
 const WHY_CARDS = [
   {
     icon: Users,
@@ -133,6 +131,8 @@ const WORKSHOP_ILLUSTRATIONS = [
 ];
 
 export default function WorkshopsPage() {
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+
   return (
     <main className="relative flex-1 flex flex-col mesh-bg">
       <div className="relative z-10 flex-1 flex flex-col">
@@ -180,38 +180,38 @@ export default function WorkshopsPage() {
             </a>
 
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  type="button"
-                  className="btn-outline inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-medium"
-                >
-                  Enquiry
-                  <ArrowDown size={14} strokeWidth={2.2} />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                <DropdownMenuItem asChild>
-                  <a
-                    href="https://wa.me/919035196480?text=Hello%20MontrixTech%2C%20I%20would%20like%20to%20enquire%20about%20a%20workshop."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex cursor-pointer items-center gap-2"
-                  >
-                    <MessageCircle size={15} className="text-[#12B8B0]" />
-                    Enquire on WhatsApp
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a
-                    href="mailto:workshop@montrixtech.in?subject=Workshop%20Enquiry"
-                    className="flex cursor-pointer items-center gap-2"
-                  >
-                    <Mail size={15} className="text-[#12B8B0]" />
-                    Enquire by email
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <button
+      type="button"
+      className="btn-outline inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-medium"
+    >
+      Enquiry
+      <ArrowDown size={14} strokeWidth={2.2} />
+    </button>
+  </DropdownMenuTrigger>
+
+  <DropdownMenuContent align="start" className="w-64">
+    <DropdownMenuItem asChild>
+      <a
+        href="https://wa.me/919035196480?text=Hello%20MontrixTech%2C%20I%20would%20like%20to%20enquire%20about%20a%20workshop."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex cursor-pointer items-center gap-2"
+      >
+        <MessageCircle size={15} className="text-[#12B8B0]" />
+        Enquire on WhatsApp
+      </a>
+    </DropdownMenuItem>
+
+    <DropdownMenuItem
+      onSelect={() => setShowEnquiryForm(true)}
+      className="cursor-pointer"
+    >
+      <Mail size={15} className="text-[#12B8B0]" />
+      Enquire about a Workshop
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
           </motion.div>
           <div className="hidden lg:block absolute right-6 top-12 pointer-events-none z-20 ">
   <Image
@@ -224,41 +224,37 @@ className="object-contain"  />
         </section>
 
         {/* ===== WHY CHOOSE MONTRIXTECH ===== */}
-        <section className="container-premium py-10 lg:py-14">
-          <SectionHeading
-            eyebrow="Why MontrixTech"
-            title="Built by engineers. Delivered for classrooms."
-            description="We bring the same engineering rigour we use for client products into every workshop — so participants don't just learn, they ship."
-            align="center"
-            className="mb-10"
-          />
-          <motion.div
-            variants={gridContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5"
-          >
-            {WHY_CARDS.map((w) => {
-              const Icon = w.icon;
-              return (
-                <motion.div
-                  key={w.title}
-                  variants={gridItem}
-                  className="group rounded-2xl border border-cream-400 bg-cream-50 p-6 lift"
-                >
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#12B8B0]/12 text-[#0F6E56] mb-5 transition-colors duration-300 group-hover:bg-[#12B8B0] group-hover:text-white">
-                    <Icon size={20} strokeWidth={1.7} />
-                  </div>
-                  <h3 className="text-lg font-medium text-[#0A2E57] mb-2">
-                    {w.title}
-                  </h3>
-                  <p className="text-sm text-[#5F5E5A] leading-6">{w.body}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </section>
+        {showEnquiryForm && (
+  <section className="container-premium py-10 lg:py-14">
+    <div className="mx-auto max-w-2xl rounded-2xl border border-cream-400 bg-cream-50 p-6 lg:p-8">
+      <div className="mb-6 flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#12B8B0]">
+            Workshop Enquiry
+          </p>
+
+          <h2 className="mt-2 text-2xl font-semibold text-[#0A2E57]">
+            Tell us about your workshop
+          </h2>
+
+          <p className="mt-2 text-sm leading-6 text-[#5F5E5A]">
+            Share your requirements and our team will get back to you.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setShowEnquiryForm(false)}
+          className="text-sm font-medium text-[#5F5E5A] hover:text-[#0A2E57]"
+        >
+          Close
+        </button>
+      </div>
+
+      <WorkshopEnquiryForm />
+    </div>
+  </section>
+)}
 
         {/* ===== WORKSHOP CATEGORIES ===== */}
         <section

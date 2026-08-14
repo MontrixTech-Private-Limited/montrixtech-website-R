@@ -1,5 +1,17 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import {
+  SESv2Client,
+  SendEmailCommand,
+} from "@aws-sdk/client-sesv2";
+
+const ses = new SESv2Client({
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+  },
+});
 
 const ApplicationSchema = z.object({
   name: z.string().min(3).max(60),
@@ -76,6 +88,7 @@ export async function POST(request: Request) {
       );
     }
 
+
     const application = parsed.data;
 
     const provider = (process.env.EMAIL_PROVIDER || "console").toLowerCase();
@@ -140,6 +153,34 @@ export async function POST(request: Request) {
           console.error("[careers] Resend error:", providerError);
           throw new Error("The email provider rejected the application.");
         }
+              } else if (provider === "ses") {
+        const command = new SendEmailCommand({
+          FromEmailAddress: from,
+
+          Destination: {
+            ToAddresses: [to],
+          },
+
+          ReplyToAddresses: [application.email],
+
+          Content: {
+            Raw: {
+              Data: createRawEmail({
+                from,
+                to,
+                replyTo: application.email,
+                subject,
+                text,
+                filename: resumeEntry.name || "resume.pdf",
+                resumeBase64,
+              }),
+            },
+          },
+        });
+
+        await ses.send(command);
+
+        console.log("[careers] SES email sent successfully.");
       } else if (provider === "sendgrid") {
         const key = process.env.SENDGRID_API_KEY;
 
@@ -218,4 +259,49 @@ export async function POST(request: Request) {
       { status: 400 }
     );
   }
+}
+function createRawEmail({
+  from,
+  to,
+  replyTo,
+  subject,
+  text,
+  filename,
+  resumeBase64,
+}: {
+  from: string;
+  to: string;
+  replyTo: string;
+  subject: string;
+  text: string;
+  filename: string;
+  resumeBase64: string;
+}) {
+  const boundary = `----=_Part_${Date.now()}`;
+
+  const message = [
+    `From: ${from}`,
+    `To: ${to}`,
+    `Reply-To: ${replyTo}`,
+    `Subject: ${subject}`,
+    `MIME-Version: 1.0`,
+    `Content-Type: multipart/mixed; boundary="${boundary}"`,
+    "",
+    `--${boundary}`,
+    `Content-Type: text/plain; charset="UTF-8"`,
+    `Content-Transfer-Encoding: 8bit`,
+    "",
+    text,
+    "",
+    `--${boundary}`,
+    `Content-Type: application/pdf; name="${filename}"`,
+    `Content-Disposition: attachment; filename="${filename}"`,
+    `Content-Transfer-Encoding: base64`,
+    "",
+    resumeBase64,
+    "",
+    `--${boundary}--`,
+  ].join("\r\n");
+
+  return Buffer.from(message);
 }
