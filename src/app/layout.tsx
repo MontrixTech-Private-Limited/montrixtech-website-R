@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://montrixtech.com"),
 
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
+  icon: "/icon.png",
+  shortcut: "/icon.png",
+  apple: "/icon.png",
+},
 
   title: {
     default: "MontrixTech — Software Development Company",
