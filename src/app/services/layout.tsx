@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Services · MontrixTech",
     description:
       "End-to-end digital transformation under one roof — web, mobile, cloud, AI, and design.",
-    url: "https://montrixtech.in/services",
+    url: "https://montrixtech.com/services",
     type: "website",
   },
 };

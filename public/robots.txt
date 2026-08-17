@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://montrixtech.in/sitemap.xml
+Sitemap: https://montrixtech.com/sitemap.xml

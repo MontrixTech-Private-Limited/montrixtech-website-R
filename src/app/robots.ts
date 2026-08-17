@@ -8,7 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://montrixtech.in/sitemap.xml",
-    host: "https://montrixtech.in",
-  };
+    sitemap: "https://montrixtech.com/sitemap.xml",
+host: "https://montrixtech.com",  };
 }

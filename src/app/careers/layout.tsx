@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Careers · MontrixTech",
     description:
       "Build your career with a team that ships. Internship roles open across Engineering, Design, Marketing, and Business.",
-    url: "https://montrixtech.in/careers",
+    url: "https://montrixtech.com/careers",
     type: "website",
   },
 };

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Workshops · MontrixTech",
     description:
       "Empowering the next generation through technology. Workshops for schools, colleges and institutions across six tracks.",
-    url: "https://montrixtech.in/workshops",
+    url: "https://montrixtech.com/workshops",
     type: "website",
   },
 };

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "About MontrixTech",
     description:
       "A modern software company building web, mobile, cloud, and AI products — without the agency theatre.",
-    url: "https://montrixtech.in/about",
+    url: "https://montrixtech.com/about",
     type: "website",
   },
 };

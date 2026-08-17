@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Contact · MontrixTech",
     description:
       "Let's discuss your next project. We reply within a working day.",
-    url: "https://montrixtech.in/contact",
+    url: "https://montrixtech.com/contact",
     type: "website",
   },
 };
