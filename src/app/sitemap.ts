@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://montrixtech.in";
+const BASE = "https://montrixtech.com";
 
 const ROUTES = [
   { path: "/", changeFrequency: "monthly" as const, priority: 1.0 },
@@ -13,6 +13,7 @@ const ROUTES = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+
   return ROUTES.map((r) => ({
     url: `${BASE}${r.path}`,
     lastModified: now,
