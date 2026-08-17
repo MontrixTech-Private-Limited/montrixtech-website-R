@@ -14,44 +14,63 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://montrixtech.in"),
+  metadataBase: new URL("https://montrixtech.com"),
+
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+
   title: {
-    default: "MontrixTech — Software that moves your business forward",
+    default: "MontrixTech — Software Development Company",
     template: "%s · MontrixTech",
   },
+
   description:
-    "MontrixTech Private Limited designs and builds web, mobile, cloud and AI products for teams who need to ship real things, fast.",
+    "MontrixTech Private Limited is a software development company offering web development, mobile app development, cloud solutions, AI solutions and custom software development.",
+
   keywords: [
     "MontrixTech",
-    "software development",
-    "web development",
-    "mobile apps",
+    "MontrixTech Private Limited",
+    "software development company",
+    "web development company",
+    "mobile app development",
+    "custom software development",
     "cloud solutions",
     "AI solutions",
-    "Bangalore",
+    "software company Bangalore",
+    "IT company Bangalore",
   ],
-  authors: [{ name: "MontrixTech Private Limited" }],
+
+  authors: [
+    {
+      name: "MontrixTech Private Limited",
+    },
+  ],
+
+  creator: "MontrixTech Private Limited",
+  publisher: "MontrixTech Private Limited",
+
   alternates: {
     canonical: "/",
   },
+
   openGraph: {
-    title: "MontrixTech — Software that moves your business forward",
+    title: "MontrixTech — Software Development Company",
     description:
-      "We design and build web, mobile, and AI products for teams who need to ship real things, fast.",
-    url: "https://montrixtech.in",
+      "MontrixTech Private Limited delivers web, mobile, cloud, AI and custom software solutions for businesses.",
+    url: "https://montrixtech.com",
     siteName: "MontrixTech",
     type: "website",
     locale: "en_IN",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "MontrixTech",
-    description: "Web, mobile, cloud and AI products for teams who ship.",
+    title: "MontrixTech — Software Development Company",
+    description:
+      "Web, mobile, cloud, AI and custom software solutions by MontrixTech.",
   },
 };
 
