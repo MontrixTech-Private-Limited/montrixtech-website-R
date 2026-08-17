@@ -15,6 +15,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://montrixtech.in"),
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   title: {
     default: "MontrixTech — Software that moves your business forward",
     template: "%s · MontrixTech",
