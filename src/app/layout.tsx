@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import ScrollToTop from "@/components/montrix/ScrollToTop";
 import BackToTop from "@/components/montrix/BackToTop";
 import PageTransition from "@/components/montrix/PageTransition";
-
+import OrganizationSchema from "@/components/seo/OrganizationSchema";
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -82,6 +82,8 @@ export default function RootLayout({
       <body
 className={`${manrope.variable} min-h-screen antialiased`}
 >
+  <OrganizationSchema />
+
         <ScrollToTop />
         <PageTransition>{children}</PageTransition>
         <BackToTop />
