@@ -7,6 +7,7 @@ import ScrollToTop from "@/components/montrix/ScrollToTop";
 import BackToTop from "@/components/montrix/BackToTop";
 import PageTransition from "@/components/montrix/PageTransition";
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
+
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -52,25 +53,43 @@ export const metadata: Metadata = {
   creator: "MontrixTech Private Limited",
   publisher: "MontrixTech Private Limited",
 
-  alternates: {
-    canonical: "/",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 
   openGraph: {
-    title: "MontrixTech — Software Development Company",
-    description:
-      "MontrixTech Private Limited delivers web, mobile, cloud, AI and custom software solutions for businesses.",
-    url: "https://montrixtech.com",
-    siteName: "MontrixTech",
     type: "website",
     locale: "en_IN",
+    url: "https://montrixtech.com",
+    siteName: "MontrixTech Private Limited",
+    title: "MontrixTech Private Limited | Software & IT Solutions",
+    description:
+      "Web, mobile, cloud, AI and custom software solutions for businesses.",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
+        alt: "MontrixTech Private Limited",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "MontrixTech — Software Development Company",
+    title: "MontrixTech Private Limited | Software & IT Solutions",
     description:
-      "Web, mobile, cloud, AI and custom software solutions by MontrixTech.",
+      "Web, mobile, cloud, AI and custom software solutions for businesses.",
+    images: ["/favicon.png"],
+  },
+
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -79,10 +98,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-className={`${manrope.variable} min-h-screen antialiased`}
->
-  <OrganizationSchema />
+      <body className={`${manrope.variable} min-h-screen antialiased`}>
+        <OrganizationSchema />
 
         <ScrollToTop />
         <PageTransition>{children}</PageTransition>
