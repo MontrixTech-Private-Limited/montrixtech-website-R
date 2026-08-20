@@ -2,7 +2,6 @@ export default function OrganizationSchema() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-
     "@id": "https://montrixtech.com/#organization",
 
     name: "MontrixTech Private Limited",
@@ -13,6 +12,8 @@ export default function OrganizationSchema() {
       "@type": "ImageObject",
       url: "https://montrixtech.com/logo.png",
     },
+    
+image: "https://montrixtech.com/logo.png",
 
     description:
       "MontrixTech Private Limited is a software development company offering web development, mobile app development, cloud solutions, AI solutions and custom software development.",
@@ -40,12 +41,30 @@ export default function OrganizationSchema() {
     ],
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://montrixtech.com/#website",
+    name: "MontrixTech",
+    alternateName: "MontrixTech Private Limited",
+    url: "https://montrixtech.com/",
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(organizationSchema),
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+    </>
   );
 }
