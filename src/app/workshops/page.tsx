@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WorkshopsPageClient from "./WorkshopsPageClient";
 
 export const metadata: Metadata = {
-  title: "Technology Workshops & Bootcamps | MontrixTech",
+  title: "Technology Workshops & Bootcamps in Bengaluru | MontrixTech",
 
   description:
     "Industry-focused technology workshops and bootcamps by MontrixTech for schools, colleges and institutions, covering programming, software development, AI, cloud and modern technologies.",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Technology Workshops & Bootcamps | MontrixTech",
+    title: "Technology Workshops & Bootcamps in Bengaluru | MontrixTech",
 
     description:
       "Hands-on technology workshops for schools, colleges and institutions, delivered by engineers with real-world software development experience.",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Technology Workshops & Bootcamps | MontrixTech",
+    title: "Technology Workshops & Bootcamps in Bengaluru | MontrixTech",
 
     description:
       "Hands-on technology workshops for schools, colleges and institutions, delivered by engineers with real-world software development experience.",

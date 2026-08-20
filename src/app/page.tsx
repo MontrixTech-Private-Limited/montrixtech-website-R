@@ -10,14 +10,15 @@ import WorkshopsTeaser from "@/components/montrix/WorkshopsTeaser";
 import ContactPreview from "@/components/montrix/ContactPreview";
 
 export const metadata: Metadata = {
-  title: "Software Development Company in Bangalore",
-  description:
-    "MontrixTech Private Limited is a software development company in Bangalore offering web development, mobile app development, custom software, cloud and AI solutions for businesses.",
+title: "Software Development Company in Bengaluru | MontrixTech",
+
+description:
+  "MontrixTech Private Limited is a software development company in Bengaluru offering web development, mobile app development, custom software, cloud and AI solutions for businesses.",
   alternates: {
     canonical: "https://montrixtech.com/",
   },
   openGraph: {
-    title: "Software Development Company in Bangalore | MontrixTech",
+    title: "Software Development Company in Bengaluru | MontrixTech",
     description:
       "Web, mobile, custom software, cloud and AI solutions for businesses from MontrixTech Private Limited.",
     url: "https://montrixtech.com/",

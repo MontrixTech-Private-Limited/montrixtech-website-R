@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import ServicesPageClient from "./ServicesPageClient";
 
 export const metadata: Metadata = {
-  title: "Software Development Services | MontrixTech",
-
+title: "Software Development Services in Bengaluru | MontrixTech",
   description:
     "Explore software development services from MontrixTech Private Limited, including web development, mobile applications, custom software, cloud and AI solutions.",
 
@@ -12,8 +11,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Software Development Services | MontrixTech",
-
+title: "Software Development Services in Bengaluru | MontrixTech",
     description:
       "Web, mobile, custom software, cloud and AI solutions from MontrixTech Private Limited.",
 
@@ -38,8 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Software Development Services | MontrixTech",
-
+title: "Software Development Services in Bengaluru | MontrixTech",
     description:
       "Web, mobile, custom software, cloud and AI solutions from MontrixTech Private Limited.",
 

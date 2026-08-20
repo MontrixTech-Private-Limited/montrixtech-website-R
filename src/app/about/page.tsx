@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import AboutPageClient from "./AboutPageClient";
 
 export const metadata: Metadata = {
-  title: "About MontrixTech Private Limited | Software Company in Bangalore",
-
+title: "About MontrixTech Private Limited | Software Company in Bengaluru",
   description:
     "Learn about MontrixTech Private Limited, a Bengaluru-based software company delivering web, mobile, cloud, AI and custom software solutions for startups, businesses and enterprises.",
 
@@ -12,8 +11,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "About MontrixTech Private Limited | Software Company in Bangalore",
-
+title: "About MontrixTech Private Limited | Software Company in Bengaluru",
     description:
       "Learn about MontrixTech, a Bengaluru-based technology company delivering modern web, mobile, cloud, AI and custom software solutions.",
 
@@ -38,7 +36,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "About MontrixTech Private Limited | Software Company in Bangalore",
+    title: "About MontrixTech Private Limited | Software Company in Bengaluru",
+    
 
     description:
       "Learn about MontrixTech, a Bengaluru-based technology company delivering modern web, mobile, cloud, AI and custom software solutions.",

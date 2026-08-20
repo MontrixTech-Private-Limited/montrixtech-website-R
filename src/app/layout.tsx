@@ -62,12 +62,10 @@ export const metadata: Metadata = {
     },
   },
 
-  openGraph: {
+    openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://montrixtech.com",
     siteName: "MontrixTech Private Limited",
-    title: "MontrixTech Private Limited | Software & IT Solutions",
     description:
       "Web, mobile, cloud, AI and custom software solutions for businesses.",
     images: [
@@ -88,9 +86,7 @@ export const metadata: Metadata = {
     images: ["/favicon.png"],
   },
 
-  alternates: {
-    canonical: "/",
-  },
+  
 };
 
 export default function RootLayout({
