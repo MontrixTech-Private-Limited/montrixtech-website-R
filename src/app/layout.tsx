@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -102,14 +103,28 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.variable} min-h-screen antialiased`}>
-        <OrganizationSchema />
+     <body className={`${manrope.variable} min-h-screen antialiased`}>
+  <OrganizationSchema />
 
-        <ScrollToTop />
-        <PageTransition>{children}</PageTransition>
-        <BackToTop />
-        <Toaster />
-      </body>
+  <ScrollToTop />
+  <PageTransition>{children}</PageTransition>
+  <BackToTop />
+  <Toaster />
+
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-53GYT3QRS6"
+    strategy="afterInteractive"
+  />
+
+  <Script id="google-analytics" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-53GYT3QRS6');
+    `}
+  </Script>
+</body>
     </html>
   );
 }
