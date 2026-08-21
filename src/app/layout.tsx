@@ -17,11 +17,19 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://montrixtech.com"),
 
+
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+
+   verification: {
+    other: {
+      "msvalidate.01": "F0803CCF201D8852DA225CB983D83D43",
+    },
+  },
+
 
   title: {
     default: "MontrixTech — Software Development Company",
